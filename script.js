@@ -9,9 +9,15 @@ makeGrid = () =>{
         //add class to the divs
         div.classList.add('grid-cell');
         //forEach to add eventListeners to each div
+
+        //add event listeners to each div cell created(to allow drawing effect)
+        div.addEventListener('mouseover', function(event){
+            event.target.style.backgroundColor = 'blue';
+        })
         //append the divs to the grid container to make the grid squares
         grid.appendChild(div);
     }
+
 }
 //Call the grid
 makeGrid();

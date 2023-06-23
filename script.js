@@ -2,6 +2,10 @@
 const grid = document.querySelector(".grid");
 //get our grid cells
 const grid_cells = grid.childNodes;
+
+//buttons
+const eraserButton = document.querySelector('#clear');
+
 //DEFAULT GRID SIZE
 const DEFAULT_GRID = 256;
 
@@ -28,7 +32,11 @@ makeGrid = (number) => {
 const clearGrid = () => {
   // grid_cells.forEach(cell => console.log(cell));
   grid_cells.forEach((cell) => (cell.style.backgroundColor = "white"));
+  //message 
+  console.log('Grid cleared');
 };
+//add event listener to button
+eraserButton.addEventListener('click', clearGrid);
 
 //Call the grid(default size)
 makeGrid(DEFAULT_GRID);
